@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartola #Garela_afc</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="page">
+      <h1 id="liga-titulo">Cartola #Garela_afc</h1>
+      <div class="subtitle" id="ano-subtitulo">Temporada 2026</div>
+      <div class="links" id="links"></div>
+    </header>
+
+    <section class="card">
+      <h2>Premiação</h2>
+      <div class="grid-prizes" id="grid-premiacao"></div>
+    </section>
+
+    <section class="card">
+      <h2>Arrecadação</h2>
+      <div class="totals" id="totais"></div>
+    </section>
+
+    <section class="card">
+      <h2>Participantes</h2>
+      <div style="overflow-x:auto">
+        <table id="tabela-participantes">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Apelido</th>
+              <th>Time</th>
+              <th>Manager (Cartola)</th>
+              <th>Status</th>
+              <th class="right">Pago</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Aviso para o grupo</h2>
+      <p class="muted" style="margin-top:0">Texto pronto para colar no WhatsApp, gerado automaticamente.</p>
+      <textarea id="aviso-texto" readonly></textarea>
+      <div class="actions">
+        <button id="btn-copiar-aviso">📋 Copiar aviso</button>
+        <a class="btn secondary" href="admin.html">Ir para o admin</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

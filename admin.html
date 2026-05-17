@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Cartola #Garela_afc</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="page">
+      <h1>Admin — Cartola #Garela_afc</h1>
+      <div class="subtitle">Edição dos dados da liga. Edições ficam salvas localmente no seu navegador.</div>
+      <div class="links">
+        <a href="index.html">← Voltar para a página pública</a>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>Configurações da liga</h2>
+      <div class="row">
+        <div class="field">
+          <label>Ano</label>
+          <input type="number" id="cfg-ano">
+        </div>
+        <div class="field">
+          <label>Nome da liga</label>
+          <input type="text" id="cfg-liga">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Valor da inscrição (R$)</label>
+          <input type="number" id="cfg-inscricao">
+        </div>
+        <div class="field">
+          <label>Pix</label>
+          <input type="text" id="cfg-pix">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Link Liga no Cartola</label>
+          <input type="url" id="cfg-link-cartola">
+        </div>
+        <div class="field">
+          <label>Link Grupo WhatsApp</label>
+          <input type="url" id="cfg-link-whatsapp">
+        </div>
+      </div>
+      <div class="field">
+        <label>Link planilha (legado)</label>
+        <input type="url" id="cfg-link-planilha">
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Premiação (valores fixos em R$)</h2>
+      <p class="muted" style="margin-top:0">Defina quanto cada colocação recebe. Use 0 para remover (não fica no JSON exportado).</p>
+
+      <h3>Campeonato</h3>
+      <div class="row-4">
+        <div class="field"><label>1º</label><input type="number" id="prem-camp-1"></div>
+        <div class="field"><label>2º</label><input type="number" id="prem-camp-2"></div>
+        <div class="field"><label>3º</label><input type="number" id="prem-camp-3"></div>
+        <div class="field"><label>4º</label><input type="number" id="prem-camp-4"></div>
+      </div>
+
+      <h3>1º Turno</h3>
+      <div class="row-4">
+        <div class="field"><label>1º</label><input type="number" id="prem-t1-1"></div>
+        <div class="field"><label>2º</label><input type="number" id="prem-t1-2"></div>
+        <div class="field"><label>3º</label><input type="number" id="prem-t1-3"></div>
+        <div class="field"><label>4º</label><input type="number" id="prem-t1-4"></div>
+      </div>
+
+      <h3>2º Turno</h3>
+      <div class="row-4">
+        <div class="field"><label>1º</label><input type="number" id="prem-t2-1"></div>
+        <div class="field"><label>2º</label><input type="number" id="prem-t2-2"></div>
+        <div class="field"><label>3º</label><input type="number" id="prem-t2-3"></div>
+        <div class="field"><label>4º</label><input type="number" id="prem-t2-4"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Participantes</h2>
+      <div style="overflow-x:auto">
+        <table class="admin-table" id="tabela-admin">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Apelido</th>
+              <th>Time</th>
+              <th>Manager (Cartola)</th>
+              <th style="width:90px">Pago (R$)</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="actions">
+        <button id="btn-add">+ Adicionar participante</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ações</h2>
+      <div class="actions">
+        <button id="btn-exportar">📋 Exportar data.js (copiar)</button>
+        <button class="secondary" id="btn-recarregar">🔄 Recarregar do data.js</button>
+        <button class="secondary" id="btn-baixar">⬇️ Baixar data.js</button>
+        <button class="danger" id="btn-limpar">🗑️ Limpar rascunho local</button>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:13px">
+        <strong>Como publicar:</strong> clique em <em>Exportar</em>, abra o repositório no GitHub, edite o arquivo <code>data.js</code>, cole o conteúdo e faça commit. O GitHub Pages atualiza em ~30 segundos.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Preview do data.js</h2>
+      <textarea id="preview" readonly style="min-height:240px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:13px"></textarea>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
