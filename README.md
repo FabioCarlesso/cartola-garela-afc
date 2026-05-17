@@ -19,13 +19,13 @@ Abrir `index.html` no navegador (ou acessar a URL do GitHub Pages).
 ## Estrutura
 
 ```
-index.html      → página pública
-admin.html      → tela de edição
-data.js         → fonte da verdade (participantes, configurações)
-app.js          → lógica da página pública
-admin.js        → lógica do admin (CRUD + export)
-styles.css      → estilo compartilhado
-planejamento.md → documento de planejamento
+index.html           → página pública
+admin.html           → tela de edição
+data.js              → fonte da verdade (participantes, configurações)
+css/styles.css       → estilo compartilhado
+js/app.js            → lógica da página pública
+js/admin.js          → lógica do admin (CRUD + export)
+docs/planejamento.md → documento de planejamento
 ```
 
 Sem build, sem dependências. Roda direto em `file://`.

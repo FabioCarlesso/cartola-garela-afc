@@ -25,15 +25,18 @@ Substituir a planilha `https://bit.ly/garela2026` por uma página simples onde:
 
 ```
 cartola-garela-afc/
-├── index.html        # view pública: tabela + premiação + botão WhatsApp
-├── admin.html        # sua tela de edição
-├── data.js           # fonte da verdade (export const DATA = {...})
-├── app.js            # lógica da view pública (render tabela, cálculos, copy)
-├── admin.js          # lógica do admin (CRUD, localStorage, export)
-├── styles.css        # estilo compartilhado
+├── index.html             # view pública: tabela + premiação + botão WhatsApp
+├── admin.html             # sua tela de edição
+├── data.js                # fonte da verdade (const DATA = {...})
+├── css/
+│   └── styles.css         # estilo compartilhado
+├── js/
+│   ├── app.js             # lógica da view pública (render, cálculos, copy)
+│   └── admin.js           # lógica do admin (CRUD, localStorage, export)
+├── docs/
+│   └── planejamento.md    # este arquivo
 ├── archive/
-│   └── 2025.js       # snapshots de anos anteriores (quando aplicável)
-├── planejamento.md   # este arquivo
+│   └── 2025.js            # snapshots de anos anteriores (quando aplicável)
 └── README.md
 ```
 
