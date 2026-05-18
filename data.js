@@ -16,6 +16,11 @@ const DATA = {
     turno1: { "1": 145, "2": 105, "3": 50 },
     turno2: { "1": 145, "2": 105, "3": 50 }
   },
+  ganhadores: {
+    campeonato: {},
+    turno1: {},
+    turno2: {}
+  },
   participantes: [
     {"nome":"Fábio N. Carlesso","apelido":"Fabinho","time":"Timao NUTS","manager":"Sir. Fábio Carlesso","pago":100},
     {"nome":"Rafael Adapar","apelido":"","time":"RBATAGLINI FC","manager":"RAFAEL BATAGLINI","pago":100},

@@ -109,6 +109,12 @@ header.page .links a:hover { text-decoration: underline; }
   font-size: 14px;
 }
 
+.prize-block .winner {
+  margin-left: 6px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .totals {
   display: flex;
   flex-wrap: wrap;

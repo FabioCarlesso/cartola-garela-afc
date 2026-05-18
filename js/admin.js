@@ -32,6 +32,24 @@
     if (el) el.value = v == null ? "" : v;
   }
 
+  function buildWinnerOptions() {
+    const opts = ['<option value="">— nenhum —</option>'];
+    state.participantes.forEach(p => {
+      const label = p.apelido ? `${p.nome} (${p.apelido})` : p.nome;
+      opts.push(`<option value="${escapeAttr(p.nome)}">${escapeAttr(label)}</option>`);
+    });
+    return opts.join("");
+  }
+
+  function refreshWinnerSelects() {
+    const html = buildWinnerOptions();
+    document.querySelectorAll("[id^='win-']").forEach(sel => {
+      const current = sel.value;
+      sel.innerHTML = html;
+      sel.value = current;
+    });
+  }
+
   function fillForm() {
     setVal("cfg-ano", state.ano);
     setVal("cfg-liga", state.liga);
@@ -40,6 +58,8 @@
     setVal("cfg-link-cartola", (state.links && state.links.ligaCartola) || "");
     setVal("cfg-link-whatsapp", (state.links && state.links.whatsapp) || "");
     setVal("cfg-link-planilha", (state.links && state.links.planilha) || "");
+
+    state.ganhadores = state.ganhadores || { campeonato: {}, turno1: {}, turno2: {} };
 
     const grupos = [
       ["camp", "campeonato"],
@@ -50,6 +70,14 @@
       const p = (state.premiacao && state.premiacao[chave]) || {};
       for (let i = 1; i <= 4; i++) {
         setVal(`prem-${pref}-${i}`, p[String(i)] || 0);
+      }
+    });
+
+    refreshWinnerSelects();
+    grupos.forEach(([pref, chave]) => {
+      const g = (state.ganhadores && state.ganhadores[chave]) || {};
+      for (let i = 1; i <= 4; i++) {
+        setVal(`win-${pref}-${i}`, g[String(i)] || "");
       }
     });
 
@@ -73,6 +101,7 @@
       ["t2", "turno2"]
     ];
     state.premiacao = state.premiacao || {};
+    state.ganhadores = state.ganhadores || {};
     grupos.forEach(([pref, chave]) => {
       const out = {};
       for (let i = 1; i <= 4; i++) {
@@ -80,6 +109,13 @@
         if (v > 0) out[String(i)] = v;
       }
       state.premiacao[chave] = out;
+
+      const winners = {};
+      for (let i = 1; i <= 4; i++) {
+        const v = val(`win-${pref}-${i}`, "");
+        if (v) winners[String(i)] = v;
+      }
+      state.ganhadores[chave] = winners;
     });
   }
 
@@ -98,6 +134,7 @@
       `;
       tbody.appendChild(tr);
     });
+    refreshWinnerSelects();
   }
 
   function escapeAttr(s) {
@@ -165,6 +202,18 @@
       const inner = Object.entries(obj)
         .sort((a, b) => Number(a[0]) - Number(b[0]))
         .map(([k, v]) => `"${k}": ${Number(v)}`)
+        .join(", ");
+      const sep = i < arr.length - 1 ? "," : "";
+      lines.push(`    ${chave}: { ${inner} }${sep}`);
+    });
+    lines.push(`  },`);
+    lines.push(`  ganhadores: {`);
+    ["campeonato", "turno1", "turno2"].forEach((chave, i, arr) => {
+      const obj = (state.ganhadores && state.ganhadores[chave]) || {};
+      const inner = Object.entries(obj)
+        .filter(([, v]) => v)
+        .sort((a, b) => Number(a[0]) - Number(b[0]))
+        .map(([k, v]) => `"${k}": ${JSON.stringify(v)}`)
         .join(", ");
       const sep = i < arr.length - 1 ? "," : "";
       lines.push(`    ${chave}: { ${inner} }${sep}`);
@@ -243,6 +292,7 @@
   function bind() {
     document.querySelectorAll("#cfg-ano,#cfg-liga,#cfg-inscricao,#cfg-pix,#cfg-link-cartola,#cfg-link-whatsapp,#cfg-link-planilha,[id^='prem-']")
       .forEach(el => el.addEventListener("input", onFormInput));
+    document.querySelectorAll("[id^='win-']").forEach(el => el.addEventListener("change", onFormInput));
     document.querySelector("#tabela-admin").addEventListener("input", onTableInput);
     document.querySelector("#tabela-admin").addEventListener("click", onTableClick);
     document.getElementById("btn-add").addEventListener("click", onAdd);

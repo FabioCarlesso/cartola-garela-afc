@@ -32,10 +32,17 @@
     ];
     grid.innerHTML = blocos.map(({ titulo, chave }) => {
       const colocacoes = DATA.premiacao[chave] || {};
+      const ganhadores = (DATA.ganhadores && DATA.ganhadores[chave]) || {};
       const total = Object.values(colocacoes).reduce((a, b) => a + Number(b || 0), 0);
       const lis = Object.entries(colocacoes)
         .sort((a, b) => Number(a[0]) - Number(b[0]))
-        .map(([pos, valor]) => `<li>${pos}º — ${fmtBRL(Number(valor))}</li>`)
+        .map(([pos, valor]) => {
+          const nome = ganhadores[pos] || "";
+          const winner = nome
+            ? ` <span class="winner">${escapeHtml(nome)}</span>`
+            : "";
+          return `<li>${pos}º — ${fmtBRL(Number(valor))}${winner}</li>`;
+        })
         .join("");
       return `
         <div class="prize-block">
