@@ -5,13 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cartola #Garela_afc</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var prefer = (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : saved;
+      if (prefer === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    })();
+  </script>
 </head>
 <body>
   <main class="container">
     <header class="page">
-      <h1 id="liga-titulo">Cartola #Garela_afc</h1>
-      <div class="subtitle" id="ano-subtitulo">Temporada 2026</div>
-      <div class="links" id="links"></div>
+      <div class="page-title-group">
+        <h1 id="liga-titulo">Cartola #Garela_afc</h1>
+        <div class="subtitle" id="ano-subtitulo">Temporada 2026</div>
+        <div class="links" id="links"></div>
+      </div>
+      <button class="theme-toggle" id="btn-tema" title="Alternar tema" aria-label="Alternar tema claro/escuro">🌙</button>
     </header>
 
     <section class="card">

@@ -131,6 +131,21 @@
       });
   }
 
+  function initTheme() {
+    const btn = document.getElementById("btn-tema");
+    const html = document.documentElement;
+    const update = () => {
+      btn.textContent = html.getAttribute("data-theme") === "dark" ? "☀️" : "🌙";
+    };
+    update();
+    btn.addEventListener("click", () => {
+      const dark = html.getAttribute("data-theme") === "dark";
+      html.setAttribute("data-theme", dark ? "light" : "dark");
+      localStorage.setItem("theme", dark ? "light" : "dark");
+      update();
+    });
+  }
+
   function init() {
     renderHeader();
     renderLinks();
@@ -139,6 +154,7 @@
     renderTabela();
     renderAviso();
     document.getElementById("btn-copiar-aviso").addEventListener("click", copiarAviso);
+    initTheme();
   }
 
   document.addEventListener("DOMContentLoaded", init);
