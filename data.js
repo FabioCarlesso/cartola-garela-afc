@@ -12,9 +12,9 @@ const DATA = {
     ligaCartola: ""
   },
   premiacao: {
-    campeonato: { "1": 400, "2": 280, "3": 130, "4": 30 },
-    turno1: { "1": 140, "2": 100, "3": 40 },
-    turno2: { "1": 140, "2": 100, "3": 40 }
+    campeonato: { "1": 410, "2": 290, "3": 150, "4": 50 },
+    turno1: { "1": 145, "2": 105, "3": 50 },
+    turno2: { "1": 145, "2": 105, "3": 50 }
   },
   participantes: [
     {"nome":"Fábio N. Carlesso","apelido":"Fabinho","time":"Timao NUTS","manager":"Sir. Fábio Carlesso","pago":100},
