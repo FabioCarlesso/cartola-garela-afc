@@ -17,13 +17,13 @@ const DATA = {
     turno2: { "1": 145, "2": 105, "3": 50 }
   },
   ganhadores: {
-    campeonato: {  },
+    campeonato: { "1": "Fábio N. Carlesso" },
     turno1: {  },
     turno2: {  }
   },
   participantes: [
     {"nome":"Fábio N. Carlesso","apelido":"Fabinho","time":"Timao NUTS","manager":"Sir. Fábio Carlesso","pago":100},
-    {"nome":"Rafael Adapar","apelido":"","time":"RBATAGLINI FC","manager":"RAFAEL BATAGLINI","pago":100},
+    {"nome":"Rafael Adapar","apelido":"Rafael Adapar","time":"RBATAGLINI FC","manager":"RAFAEL BATAGLINI","pago":100},
     {"nome":"Daniel Borges","apelido":"Mark","time":"Hell do Iguaçu","manager":"Pôfexo Daniel","pago":100},
     {"nome":"Rami Asfour","apelido":"Rami","time":"As4 FC","manager":"Rami Asfour","pago":100},
     {"nome":"Gabriel Azevedo","apelido":"Gabi","time":"#DEVOLVAMMEUSRIVAIS","manager":"Teu Pai Abel","pago":100},
