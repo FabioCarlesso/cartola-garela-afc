@@ -13,24 +13,24 @@ const DATA = {
   },
   premiacao: {
     campeonato: { "1": 400, "2": 280, "3": 130, "4": 30 },
-    turno1:     { "1": 140, "2": 100, "3": 40 },
-    turno2:     { "1": 140, "2": 100, "3": 40 }
+    turno1: { "1": 140, "2": 100, "3": 40 },
+    turno2: { "1": 140, "2": 100, "3": 40 }
   },
   participantes: [
-    { nome: "Fábio N. Carlesso",  apelido: "Fabinho",    time: "Timao NUTS",              manager: "Sir. Fábio Carlesso", pago: 100 },
-    { nome: "Rafael Adapar",      apelido: "",           time: "RBATAGLINI FC",           manager: "RAFAEL BATAGLINI",    pago: 0   },
-    { nome: "Daniel Borges",      apelido: "Mark",       time: "Hell do Iguaçu",          manager: "Pôfexo Daniel",       pago: 0   },
-    { nome: "Rami Asfour",        apelido: "Rami",       time: "As4 FC",                  manager: "Rami Asfour",         pago: 0   },
-    { nome: "Gabriel Azevedo",    apelido: "Gabi",       time: "#DEVOLVAMMEUSRIVAIS",     manager: "Teu Pai Abel",        pago: 0   },
-    { nome: "Jose C. S. Junior",  apelido: "Zé",         time: "vai fogao club",          manager: "ze fogao",            pago: 0   },
-    { nome: "Rafael Quartieri",   apelido: "Rafinha VB", time: "Furacão da Fronteira",    manager: "Rafael Quartieri",    pago: 0   },
-    { nome: "Thiago C. Santos",   apelido: "Tika",       time: "TikaFoz F.C",             manager: "Thiago Chaves Santos",pago: 0   },
-    { nome: "Willian Brecher",    apelido: "Brecher",    time: "Gears F.C.",              manager: "Willian Brecher",     pago: 0   },
-    { nome: "Marcel",             apelido: "Marcel",     time: "Bebimemo F.C.",           manager: "Cec 'el loco' Bielsa",pago: 0   },
-    { nome: "Leandro Pires",      apelido: "Leandro",    time: "SOBERANO FOZ",            manager: "LEANDRO PIRES",       pago: 0   },
-    { nome: "Thiago Sejanes",     apelido: "Fifi",       time: "Barriguense",             manager: "Thiago Sejanes",      pago: 0   },
-    { nome: "Amigo do Rami",      apelido: "Val Loja",   time: "Valspfc",                 manager: "Cenivaldo",           pago: 0   },
-    { nome: "Bruno de Sá",        apelido: "De Sá",      time: "AC Astros FC",            manager: "Brunoo Santos",       pago: 0   },
-    { nome: "Nilo A. C. Neto",    apelido: "Nilo",       time: "EsporteClube Bahia City", manager: "Rogerio Cenner",      pago: 0   }
+    {"nome":"Fábio N. Carlesso","apelido":"Fabinho","time":"Timao NUTS","manager":"Sir. Fábio Carlesso","pago":100},
+    {"nome":"Rafael Adapar","apelido":"","time":"RBATAGLINI FC","manager":"RAFAEL BATAGLINI","pago":100},
+    {"nome":"Daniel Borges","apelido":"Mark","time":"Hell do Iguaçu","manager":"Pôfexo Daniel","pago":100},
+    {"nome":"Rami Asfour","apelido":"Rami","time":"As4 FC","manager":"Rami Asfour","pago":100},
+    {"nome":"Gabriel Azevedo","apelido":"Gabi","time":"#DEVOLVAMMEUSRIVAIS","manager":"Teu Pai Abel","pago":100},
+    {"nome":"Jose C. S. Junior","apelido":"Zé","time":"vai fogao club","manager":"ze fogao","pago":100},
+    {"nome":"Rafael Quartieri","apelido":"Rafinha VB","time":"Furacão da Fronteira","manager":"Rafael Quartieri","pago":100},
+    {"nome":"Thiago C. Santos","apelido":"Tika","time":"TikaFoz F.C","manager":"Thiago Chaves Santos","pago":100},
+    {"nome":"Willian Brecher","apelido":"Brecher","time":"Gears F.C.","manager":"Willian Brecher","pago":100},
+    {"nome":"Marcel","apelido":"Marcel","time":"Bebimemo F.C.","manager":"Cec 'el loco' Bielsa","pago":100},
+    {"nome":"Leandro Pires","apelido":"Leandro","time":"SOBERANO FOZ","manager":"LEANDRO PIRES","pago":100},
+    {"nome":"Thiago Sejanes","apelido":"Fifi","time":"Barriguense","manager":"Thiago Sejanes","pago":100},
+    {"nome":"Amigo do Rami","apelido":"Val Loja","time":"Valspfc","manager":"Cenivaldo","pago":100},
+    {"nome":"Bruno de Sá","apelido":"De Sá","time":"AC Astros FC","manager":"Brunoo Santos","pago":100},
+    {"nome":"Nilo A. C. Neto","apelido":"Nilo","time":"EsporteClube Bahia City","manager":"Rogerio Cenner","pago":100}
   ]
 };
