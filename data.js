@@ -17,9 +17,9 @@ const DATA = {
     turno2: { "1": 145, "2": 105, "3": 50 }
   },
   ganhadores: {
-    campeonato: {},
-    turno1: {},
-    turno2: {}
+    campeonato: {  },
+    turno1: {  },
+    turno2: { "2": "Fábio N. Carlesso", "3": "Rafael Adapar", "4": "Daniel Borges" }
   },
   participantes: [
     {"nome":"Fábio N. Carlesso","apelido":"Fabinho","time":"Timao NUTS","manager":"Sir. Fábio Carlesso","pago":100},
