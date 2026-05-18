@@ -404,6 +404,7 @@ textarea { resize: vertical; min-height: 80px; }
     flex-shrink: 0;
     margin-right: 8px;
     min-width: 60px;
+    text-align: left;
   }
 
   /* Admin inputs smaller to keep table usable */
