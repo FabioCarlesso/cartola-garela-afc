@@ -73,12 +73,12 @@
       const st = statusDe(p, DATA.inscricao);
       return `
         <tr>
-          <td>${escapeHtml(p.nome)}</td>
-          <td>${escapeHtml(p.apelido || "")}</td>
-          <td>${escapeHtml(p.time || "")}</td>
-          <td>${escapeHtml(p.manager || "")}</td>
-          <td><span class="status ${st}">${st}</span></td>
-          <td class="right">${fmtBRL(Number(p.pago || 0))}</td>
+          <td data-label="Nome">${escapeHtml(p.nome)}</td>
+          <td data-label="Apelido">${escapeHtml(p.apelido || "")}</td>
+          <td data-label="Time">${escapeHtml(p.time || "")}</td>
+          <td data-label="Manager">${escapeHtml(p.manager || "")}</td>
+          <td data-label="Status"><span class="status ${st}">${st}</span></td>
+          <td data-label="Pago" class="right">${fmtBRL(Number(p.pago || 0))}</td>
         </tr>
       `;
     }).join("");

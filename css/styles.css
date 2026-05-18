@@ -333,7 +333,87 @@ textarea { resize: vertical; min-height: 80px; }
   color: var(--text);
 }
 
+/* ---- Tablet portrait ---- */
+@media (max-width: 768px) {
+  .row-4 { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---- Mobile ---- */
 @media (max-width: 640px) {
+  .container { padding: 16px 12px 48px; }
+  .card { padding: 14px 14px; margin-bottom: 14px; }
+
+  header.page h1 { font-size: 18px; }
+
   .row, .row-4 { grid-template-columns: 1fr; }
+
   th, td { padding: 6px 8px; font-size: 13px; }
+
+  /* Touch targets */
+  button, .btn { min-height: 44px; padding: 10px 16px; font-size: 15px; }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="url"],
+  select { min-height: 44px; padding: 10px 12px; font-size: 15px; }
+
+  /* Full-width action buttons */
+  .actions { flex-direction: column; }
+  .actions > button, .actions > .btn { width: 100%; text-align: center; }
+
+  /* Toast stretched across screen */
+  .toast { left: 12px; right: 12px; transform: none; }
+
+  /* Totals as 2-column grid */
+  .totals { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
+
+  /* Participants table → card layout */
+  #tabela-participantes,
+  #tabela-participantes tbody,
+  #tabela-participantes tr,
+  #tabela-participantes td { display: block; }
+
+  #tabela-participantes thead { display: none; }
+
+  #tabela-participantes tr {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+    padding: 4px 0;
+    background: var(--surface-alt);
+  }
+
+  #tabela-participantes td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding: 7px 12px;
+    font-size: 14px;
+  }
+
+  #tabela-participantes td:last-child { border-bottom: none; }
+
+  #tabela-participantes td[data-label]::before {
+    content: attr(data-label);
+    font-weight: 600;
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+    margin-right: 8px;
+    min-width: 60px;
+  }
+
+  /* Admin inputs smaller to keep table usable */
+  .admin-table input[type="text"],
+  .admin-table input[type="number"] { min-height: 36px; padding: 6px 8px; }
+}
+
+/* ---- Small phones ---- */
+@media (max-width: 380px) {
+  body { font-size: 14px; }
+  .card { padding: 12px 10px; }
+  header.page h1 { font-size: 16px; }
 }
