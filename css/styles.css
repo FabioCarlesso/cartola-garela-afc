@@ -314,6 +314,14 @@ textarea { resize: vertical; min-height: 80px; }
 
 .admin-table .remove-btn:hover { background: var(--status-danger-bg); }
 
+/* Header action group */
+.header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 /* Theme toggle button */
 .theme-toggle {
   flex-shrink: 0;
@@ -344,6 +352,9 @@ textarea { resize: vertical; min-height: 80px; }
   .card { padding: 14px 14px; margin-bottom: 14px; }
 
   header.page h1 { font-size: 18px; }
+
+  .header-actions { gap: 6px; }
+  #btn-exportar-imagem { font-size: 13px; padding: 8px 10px; min-height: 36px; }
 
   .row, .row-4 { grid-template-columns: 1fr; }
 

@@ -154,6 +154,10 @@
     renderTabela();
     renderAviso();
     document.getElementById("btn-copiar-aviso").addEventListener("click", copiarAviso);
+    document.getElementById("btn-exportar-imagem").addEventListener("click", () => {
+      exportarImagem();
+      toast("Imagem gerada!");
+    });
     initTheme();
   }
 
