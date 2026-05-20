@@ -297,6 +297,9 @@
     document.querySelector("#tabela-admin").addEventListener("click", onTableClick);
     document.getElementById("btn-add").addEventListener("click", onAdd);
     document.getElementById("btn-exportar").addEventListener("click", onExportar);
+    document.getElementById("btn-editar-github").addEventListener("click", function () {
+      window.open("https://github.com/FabioCarlesso/cartola-garela-afc/edit/main/data.js", "_blank", "noopener,noreferrer");
+    });
     document.getElementById("btn-baixar").addEventListener("click", onBaixar);
     document.getElementById("btn-recarregar").addEventListener("click", onRecarregar);
     document.getElementById("btn-limpar").addEventListener("click", onLimpar);
